@@ -10,5 +10,8 @@ train-dialogue:
 	rm -rf models/current/dialogue
 	python -m rasa_core.train --domain domain.yml --stories data/dialogue --out models/current/dialogue --nlu models/current/nlu --epochs 200
 
-run-server:
+run-server-bk:
 	python -m rasa_core.server --core models/current/dialogue --nlu models/current/nlu --log_file out.log --verbose --port 5000
+
+run-server:
+	python server.py --core models/current/dialogue --nlu models/current/nlu --log_file out.log --verbose --port 5000
